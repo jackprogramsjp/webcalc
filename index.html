@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Web Calculator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            :root {
+                --main-body-font-family: Verdana, Geneva, Tahoma, sans-serif;
+                --main-button-font-family: arial, sans-serif;
+                --main-font-size: xx-large;
+            }
+
+            body {
+                font-family: var(--main-body-font-family);
+            }
+
+            h1 {
+                padding: 1.5rem;
+            }
+
+            div.calc-container {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                gap: 10px;
+            }
+
+            button.calc-button {
+                font-family: var(--main-button-font-family);
+                font-size: var(--main-font-size);
+                background-color: lightgray;
+                border-radius: 10px;
+                padding: 0.5rem;
+            }
+
+            input[type="submit"] {
+                font-family: var(--main-button-font-family);
+                font-size: var(--main-font-size);
+                background-color: lightgray;
+                border-radius: 10px;
+            }
+
+            p.calc-regular {
+                font-size: var(--main-font-size);
+            }
+
+            input.input-text {
+                font-size: var(--main-font-size);
+                margin: 1rem;
+            }
+        </style>
+
+        <script type="text/javascript">
+            function appendInput(text) {
+                var element = document.getElementById("calculator-value");
+                element.value += text;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Web Calculator</h1>
+        <form method="POST" action="/">
+            <input name="equation" id="calculator-value" class="input-text" type="text" />
+            <input type="submit" value="Enter" />
+            <p class="calc-regular">0</p>
+        </form>
+        <div class="calc-container">
+            <button onclick="appendInput('1')" class="calc-button">1</button>
+            <button onclick="appendInput('2')" class="calc-button">2</button>
+            <button onclick="appendInput('3')" class="calc-button">3</button>
+            <button onclick="appendInput('4')" class="calc-button">4</button>
+            <button onclick="appendInput('5')" class="calc-button">5</button>
+            <button onclick="appendInput('6')" class="calc-button">6</button>
+            <button onclick="appendInput('7')" class="calc-button">7</button>
+            <button onclick="appendInput('8')" class="calc-button">8</button>
+            <button onclick="appendInput('9')" class="calc-button">9</button>
+            <button onclick="appendInput('0')" class="calc-button">0</button>
+        </div>
+        <br><br>
+        <div class="calc-container">
+            <button onclick="appendInput('-')" class="calc-button">-</button>
+            <button onclick="appendInput('+')" class="calc-button">+</button>
+            <button onclick="appendInput('*')" class="calc-button">*</button>
+            <button onclick="appendInput('/')" class="calc-button">/</button>
+            <button onclick="appendInput('.')" class="calc-button">.</button>
+        </div>
+    </body>
+</html>
